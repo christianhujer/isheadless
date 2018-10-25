@@ -14,6 +14,13 @@ func TestHeaded(t *testing.T) {
 	}
 }
 
+func TestHeadlessEmpty(t *testing.T) {
+	os.Setenv("DISPLAY", "")
+	if !IsHeadless() {
+		t.Error("Expected IsHeadless to return true because DISPLAY is set but empty.")
+	}
+}
+
 func TestHeadless(t *testing.T) {
 	os.Unsetenv("DISPLAY")
 	if !IsHeadless() {

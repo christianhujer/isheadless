@@ -10,6 +10,5 @@ import (
 // IsHeadless returns whether or not the environment of the current process is headless.
 // That is, whether or not a display, keyboard, and mouse can be supported in this environment.
 func IsHeadless() bool {
-	_, headed := os.LookupEnv("DISPLAY")
-	return !headed
+	return len(os.Getenv("DISPLAY")) == 0
 }
