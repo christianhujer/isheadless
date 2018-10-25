@@ -8,6 +8,10 @@ On Windows, `isheadless.IsHeadless()` always returns `false`.
 (Note that this is not correct as it ignores the edge case of running on Windows 10 IoT Core headless.)
 
 On all other systems, `isHeadless.IsHeadless()` returns `false` if an environment variable named `DISPLAY` exists.
+The behavior is the same as with Java's `java.awt.GraphicsEnvironment.isHeadless()`.
+That is:
+- If `DISPLAY` is unset or set but empty, `IsHeadless()` returns `true`.
+- If `DISPLAY` is set and non-empty, `IsHeadless()` returns `false`.
 
 ## Limitations
 
