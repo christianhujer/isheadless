@@ -1,3 +1,5 @@
+// +build !windows
+
 // Package isheadless provides a function to find out whether the environment of the process is headless.
 package isheadless
 

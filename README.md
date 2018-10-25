@@ -1,7 +1,13 @@
 # IsHeadless
 
 This little Go package provides a function `isheadless.IsHeadless() bool`.
-This function tells whether the Go program runs in a headless environment.
+This function tells whether the Go program is running in a headless environment.
+
+## Examples
+On Windows, `isheadless.IsHeadless()` always returns `false`.
+(Note that this is not correct as it ignores the edge case of running on Windows 10 IoT Core headless.)
+
+On all other systems, `isHeadless.IsHeadless()` returns `false` if an environment variable named `DISPLAY` exists.
 
 ## Limitations
 
